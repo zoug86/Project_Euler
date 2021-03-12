@@ -28,7 +28,7 @@ print(total)
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 # find the sum of the even-valued terms.
 
-
+'''
 fib = 1
 i = 0
 temp = [0]
@@ -41,3 +41,21 @@ while fib < 4000000:
         sum += fib
 
 print(sum)
+'''
+
+# Date: March 12 2021
+# Euler 3: Largest prime factor
+# Problem: The prime factors of 13195 are 5, 7, 13 and 29.
+# What is the largest prime factor of the number 600851475143 ?
+num = 600851475143
+arr_fac = []
+i = 0
+count = 2
+while num > 1:
+    if num % count == 0:
+        arr_fac.append(count)
+        num = num // count
+        i += 1
+    count += 1
+
+print(arr_fac[len(arr_fac)-1])
