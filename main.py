@@ -47,6 +47,8 @@ print(sum)
 # Euler 3: Largest prime factor
 # Problem: The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
+
+'''
 num = 600851475143
 arr_fac = []
 i = 0
@@ -59,3 +61,27 @@ while num > 1:
     count += 1
 
 print(arr_fac[len(arr_fac)-1])
+'''
+
+# Date: March 12 2021
+# Euler 3: Largest palindrome product
+# Problem: A palindromic number reads the same both ways. The largest
+# palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+# one of the 2 three digit numbers hasresult_str to be 990 (a multiple of 11)
+
+first = 999
+palindrome_arr = []
+while first > 99:
+    for second in range(999,100,-1):
+        result = first * second
+        result_str = str(result)
+        str_length = len(result_str)
+        result_str_reversed = result_str[::-1]
+        if result_str[0:str_length//2] == result_str_reversed[0:str_length//2]:
+           palindrome_arr.append(result)
+
+    first -= 1
+
+print(max(palindrome_arr))
