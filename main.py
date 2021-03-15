@@ -63,14 +63,14 @@ while num > 1:
 print(arr_fac[len(arr_fac)-1])
 '''
 
-# Date: March 12 2021
-# Euler 3: Largest palindrome product
+# Date: March 14 2021
+# Euler 4: Largest palindrome product
 # Problem: A palindromic number reads the same both ways. The largest
 # palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-# one of the 2 three digit numbers hasresult_str to be 990 (a multiple of 11)
 
+'''
 first = 999
 palindrome_arr = []
 while first > 99:
@@ -85,3 +85,23 @@ while first > 99:
     first -= 1
 
 print(max(palindrome_arr))
+'''
+
+# Date: March 14 2021
+# Euler 5: Smallest multiple
+# Problem: 2520 is the smallest number that can be divided by each of the numbers
+# from 1 to 10 without any remainder. What is the smallest positive number that is
+# evenly divisible by all of the numbers from 1 to 20?
+
+num = 2520 * 11 * 13 * 17 * 19
+
+count = 0
+while num > 1:
+    for i in range(11,21):
+        if num % i == 0:
+            count += 1
+    if count == 10:
+        break
+    num += 1
+    count = 0
+print(num)
