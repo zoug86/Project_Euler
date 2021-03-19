@@ -187,6 +187,7 @@ print(arr[10001])
 # Find the thirteen adjacent digits in the 1000-digit number that
 # have the greatest product. What is the value of this product?
 
+'''
 num_str = '731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947885184385861560' \
           '789112949495459501737958331952853208805511125406987471585238630507156932909632952274430435576689664895044524' \
           '4523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077' \
@@ -210,3 +211,46 @@ while j < len(num_str):
     j += 1
 
 print(max(arr_max))
+'''
+
+# Date: March 19 2021
+# Euler 9: Special Pythagorean triplet
+# A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+#
+# a^2 + b^2 = c^2
+# For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+#
+# There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+# Find the product abc.
+import math
+
+first_arr = []
+for i in range(2,1000):
+    if i*i < 1000*1000:
+        first_arr.append(i*i)
+
+for i in range(0,len(first_arr)):
+    for j in range(i+1, len(first_arr)):
+        a = math.sqrt(first_arr[i])
+        b = math.sqrt(first_arr[j])
+        c = math.sqrt(first_arr[i] + first_arr[j])
+        if a+b+c == 1000:
+            print(a, b, c, 'product is: ', a*b*c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
