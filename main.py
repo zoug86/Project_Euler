@@ -222,6 +222,8 @@ print(max(arr_max))
 #
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
+
+'''
 import math
 
 first_arr = []
@@ -237,10 +239,33 @@ for i in range(0,len(first_arr)):
         if a+b+c == 1000:
             print(a, b, c, 'product is: ', a*b*c)
 
+'''
 
+# Date: March 21 2021
+# Euler 10: Summation of primes
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+# Find the sum of all the primes below two million.
+# Here we use the fact that a prime number is not divisible
+# by prime numbers smaller than its square root.
+import math
 
+arr = [2]
+sum = 2
+i = 3
+count = 0
+while i <2000000:
+    for j in arr:
+        if i%j == 0:
+            count += 1
+    if count == 0:
+        num = math.ceil(math.sqrt(i))
+        if num not in arr:
+            arr.append(num)
+        sum = sum + i
+    count = 0
+    i += 1
 
-
+print(sum)
 
 
 
